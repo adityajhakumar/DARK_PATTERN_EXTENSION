@@ -1,0 +1,24 @@
+{
+ "manifest_version": 3,
+ "name": "Dark Pattern Extension",
+ "version": "1.0",
+ "description": "Analyzes web pages for dark patterns",
+ "permissions": ["activeTab", "storage"],
+ "action": {
+    "default_icon": {
+      "16": "icon.jpg",
+      "48": "icon.jpg",
+      "128": "icon.jpg"
+    },
+    "default_popup": "popup.html"
+ },
+ "background": {
+    "service_worker": "background.js"
+ },
+ "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+ ]
+}
